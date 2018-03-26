@@ -86,6 +86,15 @@
         <h2 id="Hello"><a href="#Hello" class="headerlink" title="Hello"></a>Hello</h2><h3 id="It-is-my-very-first-post"><a href="#It-is-my-very-first-post" class="headerlink" title="It is my very first post"></a>It is my very first post</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">Cirrhosis are red,</span><br><span class="line">so violets are blue,</span><br><span class="line">so sugar is sweet,</span><br><span class="line">so so are you.</span><br></pre></td></tr></table></figure>
       
     </div>
+    <div>
+      <div id="emulator">
+        <p>To play this game, please, download the latest Flash player!</p>
+        <br>
+        <a href="http://www.adobe.com/go/getflashplayer">
+          <img src="//www.adobe.com/images/shared/download_buttons/get_adobe_flash_player.png" alt="Get Adobe Flash player"/>
+        </a>
+      </div>
+    </div>
     <footer class="article-footer">
       <a data-url="http://yoursite.com/2018/03/26/hello-world/" data-id="cjf7w3wbp0000fvi5cym6la1x" class="article-share-link">Teilen</a>
       
@@ -158,7 +167,7 @@
 </nav>
     
 
-<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+<!-- <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script> -->
 
 
   <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
@@ -166,6 +175,43 @@
 
 
 <script src="/js/script.js"></script>
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
+<script src="//ajax.googleapis.com/ajax/libs/swfobject/2.2/swfobject.js"></script>
+
+<script type="text/javascript">
+
+  var resizeOwnEmulator = function(width, height)
+  {
+    var emulator = $('#emulator');
+    emulator.css('width', width);
+    emulator.css('height', height);
+  }
+
+  $(function()
+  {
+    function embed()
+    {
+      var emulator = $('#emulator');
+      if(emulator)
+      {
+        var flashvars = 
+        {
+        };
+        var params = {};
+        var attributes = {};
+        
+        params.allowscriptaccess = 'sameDomain';
+        params.allowFullScreen = 'true';
+        params.allowFullScreenInteractive = 'true';
+        
+        swfobject.embedSWF('flash/Nesbox.swf', 'emulator', '640', '480', '11.2.0', 'flash/expressInstall.swf', flashvars, params, attributes);
+      }
+    }
+    
+    embed();
+  });
+  
+</script>
 
 
 
