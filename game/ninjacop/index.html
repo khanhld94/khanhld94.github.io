@@ -21,7 +21,7 @@
   
   
     <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
-    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+  
   <link rel="stylesheet" href="/css/style.css">
 </head>
 
@@ -63,39 +63,23 @@
       <div class="outer">
         <section id="main">
   
-    <article id="post-hello-world" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2018/03/26/hello-world/" class="article-date">
-  <time datetime="2018-03-26T06:53:00.000Z" itemprop="datePublished">2018-03-26</time>
+    <article class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="article-meta">
+    <a href="#" class="article-date">
+  <time datetime="2018-03-26T06:53:00.000Z" itemprop="datePublished">Naruto</time>
 </a>
     
   </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header" style="padding-bottom: 20px !important;">
-        
-  
-    <h1 itemprop="name" style="margin-bottom: 20px;">
-      <a class="article-title" href="/2018/03/26/hello-world/">Game List</a>
-    </h1>
-    <ul class="list-group">
-      <a href="/game/supermario"><li class="list-group-item">Super Mario</li></a>
-      <a href="/game/kirbysuperstar"><li class="list-group-item list-group-item-primary">Super Kirby Star</li></a>
-      <a href="/game/contra"><li class="list-group-item list-group-item-secondary">Contra</li></a>
-      <a href="/game/battlecity"><li class="list-group-item list-group-item-success">Battle City</li></a>
-      <a href="/game/bomberman"><li class="list-group-item list-group-item-danger">Bomber Man</li></a>
-      <a href="/game/naruto"><li class="list-group-item list-group-item-warning">Naruto</li></a>
-      <a href="/game/donkeykongcountry"><li class="list-group-item list-group-item-info">Donkey Kong Country</li></a>
-      <a href="/game/streetfighter2"><li class="list-group-item list-group-item-light">Street Fighter II</li></a>
-      <a href="/game/ninjacop"><li class="list-group-item list-group-item-dark">Ninja Cop</li></a>
-    </ul>
-  
-
-      </header>
-      
-    </div>
+  <div class="article-inner" style="text-align: center">
     <div>
+  <div id="emulator">
+    <p>To play this game, please, download the latest Flash player!</p>
+    <br>
+    <a href="http://www.adobe.com/go/getflashplayer">
+      <img src="//www.adobe.com/images/shared/download_buttons/get_adobe_flash_player.png" alt="Get Adobe Flash player"/>
+    </a>
+  </div>
+</div>
     <footer class="article-footer">
       <a data-url="http://yoursite.com/2018/03/26/hello-world/" data-id="cjf7xi52q0000t6i518fjm2r3" class="article-share-link">Teilen</a>
       
@@ -123,7 +107,7 @@
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">Archiv</h3>
+    <h3 class="widget-title">Archives</h3>
     <div class="widget">
       <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/03/">March 2018</a></li></ul>
     </div>
@@ -133,7 +117,7 @@
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">letzter Beitrag</h3>
+    <h3 class="widget-title">Title</h3>
     <div class="widget">
       <ul>
         
@@ -176,6 +160,44 @@
 
 
 <script src="/js/script.js"></script>
+<script src="//ajax.googleapis.com/ajax/libs/swfobject/2.2/swfobject.js"></script>
+
+<script type="text/javascript">
+
+  var resizeOwnEmulator = function(width, height)
+  {
+    var emulator = $('#emulator');
+    emulator.css('width', width);
+    emulator.css('height', height);
+  }
+
+  $(function()
+  {
+    function embed()
+    {
+      var emulator = $('#emulator');
+      if(emulator)
+      {
+        var flashvars = 
+        {
+          system : 'gba',
+          url : '/roms/1492410835-0941 - Ninja Cop (E)(Advance-Power).zip'
+        };
+        var params = {};
+        var attributes = {};
+        
+        params.allowscriptaccess = 'sameDomain';
+        params.allowFullScreen = 'true';
+        params.allowFullScreenInteractive = 'true';
+        
+        swfobject.embedSWF('/flash/Nesbox.swf', 'emulator', '640', '480', '11.2.0', '/flash/expressInstall.swf', flashvars, params, attributes);
+      }
+    }
+    
+    embed();
+  });
+  
+</script>
 
 
   </div>
